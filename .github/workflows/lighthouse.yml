@@ -44,7 +44,7 @@ jobs:
 
       - name: Create GitHub Issue with Results
         if: always()
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ github.token }}
           script: |
