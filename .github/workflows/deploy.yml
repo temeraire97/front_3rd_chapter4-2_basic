@@ -1,4 +1,4 @@
-name: Deploy Next.js to S3 and invalidate CloudFront
+name: Deploy index.html to S3 and invalidate CloudFront
 
 on:
   push:
