@@ -7,6 +7,6 @@
 - .webp는 다른 이미지 포멧과 비교해 품질 대비 용량이 매우 작다.
 - images/의 이미지를 .webp로 전부 컨버팅
 
-| 개선 전                                        | 개선 후 |
-| ---------------------------------------------- | ------- |
-| ![alt text](report/images/refactor_origin.png) | test    |
+| 개선 전                                         | 개선 후 |
+| ----------------------------------------------- | ------- |
+| ![alt text](report/images/refactor_origin.webp) | test    |
