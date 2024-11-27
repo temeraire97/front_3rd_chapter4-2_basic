@@ -60,9 +60,43 @@ function displayProducts(products) {
   });
 }
 
-loadProducts();
+let i = 0;
+const start = Date.now();
+const CHUNK_SIZE = 100;
+const MAX_ITERATIONS = 10_000_000;
 
-// Simulate heavy operation. It could be a complex price calculation.
-for (let i = 0; i < 10000000; i++) {
-  const temp = Math.sqrt(i) * Math.sqrt(i);
+async function heavyOperation() {
+  do {
+    i++;
+  } while (i % CHUNK_SIZE !== 0);
+  // console.log('heavyOperation now:', i);
+
+  if (i < MAX_ITERATIONS) {
+    setTimeout(heavyOperation, 0);
+  } else {
+    alert('The operation has been completed. Time taken: ' + (Date.now() - start) + 'ms');
+  }
 }
+
+window.onload = () => {
+  let status = 'idle';
+  let productSection = document.querySelector('#all-products');
+
+  window.onscroll = () => {
+    let position = productSection.getBoundingClientRect().top - (window.scrollY + window.innerHeight);
+
+    if (status == 'idle' && position <= 0) {
+      // Simulate heavy operation. It could be a complex price calculation. <-- need to improve this
+      // This is a blocking operation that will freeze the UI
+      // how to improve this: https://ko.javascript.info/event-loop <-- use event loop
+
+      // for (let i = 0; i < 10000000; i++) {
+      //   const temp = Math.sqrt(i) * Math.sqrt(i);
+      // }
+
+      heavyOperation();
+      loadProducts();
+      status = 'loaded';
+    }
+  };
+};
