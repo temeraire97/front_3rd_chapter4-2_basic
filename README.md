@@ -1,7 +1,22 @@
+  
 # 바닐라 JS 프로젝트 성능 개선
 - url: [dsdvsylr6diuv.cloudfront.net](dsdvsylr6diuv.cloudfront.net)
 
+## 목차
+- [바닐라 JS 프로젝트 성능 개선](#바닐라-js-프로젝트-성능-개선)
+  - [목차](#목차)
+  - [성능 개선 보고서](#성능-개선-보고서)
+    - [Light House - Performance](#light-house---performance)
+    - [이미지 포멧 최적화](#이미지-포멧-최적화)
+    - [`<img>` + `@media` to `<picture>`](#img--media-to-picture)
+    - [`<img>` 명시적인 높이, 너비 추가 및 상품 이미지 지연 로딩](#img-명시적인-높이-너비-추가-및-상품-이미지-지연-로딩)
+    - [초기 JS 실행시간 단축](#초기-js-실행시간-단축)
+  - [PageSpeed Insights](#pagespeed-insights)
+    - [Mobile](#mobile)
+    - [Web](#web)
+
 ## 성능 개선 보고서
+
 
 ### Light House - Performance
 1. First Contentful Paint (FCP)
@@ -137,3 +152,16 @@
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | ![change_format](report/images/refactor_explicit_height_width.png)             | ![img_to_picture](report/images/refactor_initial_JS.png)                       |
 
+
+## PageSpeed Insights
+- 초기버전 대비 최종버전 지표 비교
+- 
+### Mobile
+| 개선 전                                                                       | 개선 후                                                                     |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| ![page_insights_mobile_before](report/images/page_insights_mobile_before.png) | ![page_insights_mobile_after](report/images/page_insights_mobile_after.png) |
+
+### Web
+| 개선 전                                                                         | 개선 후                                                                       |
+| ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| ![page_insights_desktop_before](report/images/page_insights_desktop_before.png) | ![page_insights_desktop_after](report/images/page_insights_desktop_after.png) |
